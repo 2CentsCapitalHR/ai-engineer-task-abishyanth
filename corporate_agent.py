@@ -18,13 +18,11 @@ DOC_TYPE_KEYWORDS = {
 COMPANY_INCORP_REQUIRED = list(DOC_TYPE_KEYWORDS.keys())
 
 def extract_text_from_docx(path):
-    """Extract text from .docx file."""
     doc = Document(path)
     paragraphs = [p.text for p in doc.paragraphs if p.text and p.text.strip() != ""]
     return "\n".join(paragraphs)
 
 def detect_document_type(path):
-    """Detect document type based on keywords."""
     text = extract_text_from_docx(path).lower()
     matches = []
     for doc_type, keywords in DOC_TYPE_KEYWORDS.items():
@@ -40,18 +38,16 @@ def detect_document_type(path):
         return "Unknown", []
 
 def detect_process_simple(uploaded_doc_types):
-    """Detect business process based on uploaded document types."""
     uploaded_set = set(uploaded_doc_types)
     for process, required_docs in PROCESS_REQUIREMENTS.items():
         if set(required_docs).issubset(uploaded_set):
             return process
-    # If no exact match, but partial overlap with company incorporation docs:
+
     if uploaded_set & set(COMPANY_INCORP_REQUIRED):
         return "Company Incorporation"
     return "Unknown"
 
 def verify_checklist(uploaded_doc_types, process):
-    """Verify required documents against uploaded docs."""
     if process in PROCESS_REQUIREMENTS:
         required = PROCESS_REQUIREMENTS[process]
     else:
@@ -66,10 +62,6 @@ def verify_checklist(uploaded_doc_types, process):
     }
 
 def generate_report_simple(process, uploaded_doc_paths, issues=None, rag_engine=None):
-    """
-    Generate a structured compliance report.
-    rag_engine: optional, used to fetch citations automatically for missing docs.
-    """
     if issues is None:
         issues = []
 
@@ -94,7 +86,6 @@ def generate_report_simple(process, uploaded_doc_paths, issues=None, rag_engine=
         citation = None
         citation_rule = None
 
-        # If doc missing, mark violation & fetch citation if available
         if doc_type in missing_docs:
             status = "Violation"
             if rag_engine:
@@ -106,7 +97,6 @@ def generate_report_simple(process, uploaded_doc_paths, issues=None, rag_engine=
                 citation = rule_data.get("citation")
                 citation_rule = rule_data.get("citation_rule")
 
-        # If doc present but specific issue found
         for issue in issues:
             if issue.get("rule_id") == rule_id:
                 status = "Violation"
