@@ -1,0 +1,30 @@
+{
+  "process": "Company Incorporation",
+  "documents_uploaded": 2,
+  "required_documents": 8,
+  "missing_documents": [
+    "Board Resolution",
+    "Shareholder Resolution",
+    "Incorporation Application Form",
+    "UBO Declaration Form",
+    "Register of Members and Directors",
+    "Change of Registered Address Notice"
+  ],
+  "detail_per_file": [
+    {
+      "file": "sample_aoa.docx",
+      "detected_type": "Articles of Association",
+      "matched_keywords": [
+        "articles of association"
+      ]
+    },
+    {
+      "file": "sample_moa.docx",
+      "detected_type": "Memorandum of Association",
+      "matched_keywords": [
+        "memorandum of association"
+      ]
+    }
+  ],
+  "issues_found": []
+}
