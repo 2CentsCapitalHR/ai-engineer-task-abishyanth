@@ -17,7 +17,6 @@ from corporate_agent import detect_document_type, detect_process_simple, generat
 from red_flags import detect_red_flags, insert_inline_comments
 from rule_config import RULES
 
-# Optional RAG engine
 try:
     from rag_engine import RAGEngine
     rag = RAGEngine(ref_dir="legal_refs")
@@ -32,7 +31,6 @@ st.title("ADGM Corporate Agent")
 if not os.path.exists("legal_refs"):
     os.makedirs("legal_refs")
 
-# Quick UI hint about legal refs
 if not any(f.endswith((".txt", ".md")) for f in os.listdir("legal_refs")):
     st.warning("No ADGM legal reference files found in 'legal_refs/'. Add .txt/.md files to enable RAG citations.")
 
@@ -122,7 +120,6 @@ if uploaded_files:
         mime="application/json"
     )
 
-    # 9) Summary message
     issue_count = len(all_issues)
     if issue_count > 0:
         st.error(f"Processing completed with {issue_count} issue(s) found.")
