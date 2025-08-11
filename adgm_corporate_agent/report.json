@@ -1,0 +1,126 @@
+{
+  "process": "Unknown",
+  "documents_uploaded": 2,
+  "required_documents": 0,
+  "missing_documents": [],
+  "detail_per_file": [
+    {
+      "file": "sample_aoa.docx",
+      "detected_type": "Articles of Association",
+      "matched_keywords": [
+        "articles of association"
+      ]
+    },
+    {
+      "file": "sample_moa.docx",
+      "detected_type": "Memorandum of Association",
+      "matched_keywords": [
+        "memorandum of association"
+      ]
+    }
+  ],
+  "issues_found": [
+    {
+      "rule_id": "JURISDICTION_ADGM",
+      "document": "sample_aoa.docx",
+      "section": "Paragraph 3",
+      "issue": "Jurisdiction clause does not specify ADGM",
+      "severity": "High",
+      "suggestion": "Update jurisdiction to ADGM Courts.",
+      "citation": null,
+      "citation_rule": null
+    },
+    {
+      "rule_id": "MISSING_SIGNATORY",
+      "document": "sample_moa.docx",
+      "section": "Paragraph 4",
+      "issue": "Missing signatory section at the end of the document",
+      "severity": "Medium",
+      "suggestion": "Add a proper signatory section with authorized signatures.",
+      "citation": null,
+      "citation_rule": null
+    }
+  ],
+  "compliance_checklist": [
+    {
+      "rule_id": "JURISDICTION_ADGM",
+      "doc_type": "Articles of Association",
+      "status": "Violation",
+      "severity": "High",
+      "citation": null,
+      "citation_rule": "adgm_companies_regulations_2020.txt"
+    },
+    {
+      "rule_id": "MISSING_SIGNATORY",
+      "doc_type": "Memorandum of Association",
+      "status": "Violation",
+      "severity": "Medium",
+      "citation": null,
+      "citation_rule": "adgm_companies_regulations_2020.txt"
+    },
+    {
+      "rule_id": "REQ_ARTICLES_ASSOCIATION",
+      "doc_type": "Articles of Association",
+      "status": "Compliant",
+      "severity": "High",
+      "citation": null,
+      "citation_rule": "adgm_companies_regulations_2020.txt"
+    },
+    {
+      "rule_id": "REQ_MEMORANDUM_ASSOCIATION",
+      "doc_type": "Memorandum of Association",
+      "status": "Compliant",
+      "severity": "High",
+      "citation": null,
+      "citation_rule": "adgm_companies_regulations_2020.txt"
+    },
+    {
+      "rule_id": "REQ_BOARD_RESOLUTION",
+      "doc_type": "Board Resolution",
+      "status": "Compliant",
+      "severity": "High",
+      "citation": null,
+      "citation_rule": "adgm_companies_regulations_2020.txt"
+    },
+    {
+      "rule_id": "REQ_SHAREHOLDER_RESOLUTION",
+      "doc_type": "Shareholder Resolution",
+      "status": "Compliant",
+      "severity": "High",
+      "citation": null,
+      "citation_rule": "adgm_companies_regulations_2020.txt"
+    },
+    {
+      "rule_id": "REQ_INCORP_APP_FORM",
+      "doc_type": "Incorporation Application Form",
+      "status": "Compliant",
+      "severity": "High",
+      "citation": null,
+      "citation_rule": "adgm_companies_regulations_2020.txt"
+    },
+    {
+      "rule_id": "REQ_UBO_DECLARATION",
+      "doc_type": "UBO Declaration Form",
+      "status": "Compliant",
+      "severity": "High",
+      "citation": null,
+      "citation_rule": "adgm_companies_regulations_2020.txt"
+    },
+    {
+      "rule_id": "REQ_REGISTER_MEMBERS_DIRECTORS",
+      "doc_type": "Register of Members and Directors",
+      "status": "Compliant",
+      "severity": "High",
+      "citation": null,
+      "citation_rule": "adgm_companies_regulations_2020.txt"
+    },
+    {
+      "rule_id": "REQ_CHANGE_ADDRESS_NOTICE",
+      "doc_type": "Change of Registered Address Notice",
+      "status": "Compliant",
+      "severity": "High",
+      "citation": null,
+      "citation_rule": "adgm_companies_regulations_2020.txt"
+    }
+  ]
+}
