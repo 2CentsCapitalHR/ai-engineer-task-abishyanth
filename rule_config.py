@@ -1,7 +1,3 @@
-"""
-Central rule and process configuration.
-Each rule has a rule_id, a human readable name, a severity, and a query_template used by RAG.
-"""
 PROCESS_REQUIREMENTS = {
     "Company Incorporation": [
         "Articles of Association",
@@ -76,4 +72,5 @@ RULES = {
         "query_template": "Part 23 – Change of Registered Address Notice",
         "citation_rule": "adgm_companies_regulations_2020.txt"
     }
+
 }
